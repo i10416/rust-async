@@ -1,0 +1,10 @@
+[package]
+name = "executor"
+version = "0.0.0"
+edition = "2018"
+
+[dependencies]
+block_on = {path = "../block_on"}
+once_cell = "1.8.0"
+num_cpus = "1.13.0"
+crossbeam-channel = "0.5.1"
