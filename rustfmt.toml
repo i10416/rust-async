@@ -1,0 +1,9 @@
+max_width = 120
+newline_stype = "Unix"
+indent_style ="Block"
+normalize_comments = true
+
+# rewrite rules
+reorder_imports = true
+reorder_impl_items = true
+reorder_modules = true

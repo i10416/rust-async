@@ -1,0 +1,6 @@
+[package]
+name = "block_on_example"
+version = "0.0.0"
+edition = "2018"
+[dependencies]
+block_on = {path = "../../packages/block_on"}
