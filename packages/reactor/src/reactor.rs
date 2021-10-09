@@ -64,6 +64,7 @@ impl TimerReactor {
                 timeout: timeout,
                 callback: callback,
             };
+            // todo: handle runtime contention. it would be better to relpace logic to use channel.
             self.tree.borrow_mut().push(cmd);
         }
     }
