@@ -3,6 +3,6 @@
 members =[
   "packages/block_on",
   "packages/executor",
-  "packages/scheduler",
+  "packages/reactor",
   "examples/block_on"
   ]

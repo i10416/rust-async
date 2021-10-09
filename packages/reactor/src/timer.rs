@@ -5,7 +5,7 @@ use std::sync::Arc;
 use std::task::{Poll, Waker};
 use std::time::{Duration, Instant};
 
-use crate::scheduler::{TimerScheduler};
+use crate::reactor::{TimerReactor};
 
 pub struct Timeout {
     at: Instant,
@@ -19,13 +19,13 @@ impl PartialEq for Timeout {
         self.at.eq(&other.at)
     }
 }
-// runtime::Timeout(duration) { => internal::Timeout::new(timeout,scheduler)
+// runtime::Timeout(duration) { => internal::Timeout::new(timeout,reactor)
 // => scheduler.register(TimeoutCmd {timeout, callback });
 // } =>   Timeout}.await
 // => Future::poll(timeout,ctx)
 
 impl Timeout {
-    pub fn after(duration: Duration, scheduler: &TimerScheduler) -> Arc<Self> {
+    pub fn after(duration: Duration, scheduler: &TimerReactor) -> Arc<Self> {
         let now = Instant::now();
         let it = Arc::new(Self {
             at: now + duration,
