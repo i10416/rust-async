@@ -1,6 +1,5 @@
 use crate::timer::Timeout;
 use std::{
-    borrow::BorrowMut,
     cell::RefCell,
     collections::BinaryHeap,
     sync::{Arc, Mutex},
